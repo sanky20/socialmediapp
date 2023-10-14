@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import {
     ChatBubbleOutlineOutlined,
     FavoriteBorderOutlined,
@@ -35,7 +36,7 @@ import {
     const primary = palette.primary.main;
   
     const patchLike = async () => {
-      const response = await fetch(`http://localhost:3001/posts/${postId}/like`, {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/posts/${postId}/like`, {
         method: "PATCH",
         headers: {
           Authorization: `Bearer ${token}`,
@@ -64,7 +65,7 @@ import {
             height="auto"
             alt="post"
             style={{ borderRadius: "0.75rem", marginTop: "0.75rem" }}
-            src={`http://localhost:3001/assets/${picturePath}`}
+            src={`${import.meta.env.VITE_API_URL}/assets/${picturePath}`}
           />
         )}
         <FlexBetween mt="0.25rem">
